@@ -82,3 +82,18 @@ h3 {
   justify-content: flex-end;
   align-items: center;
 }
+
+
+.inputContainerTags{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputContainer p{
+  cursor: pointer;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
