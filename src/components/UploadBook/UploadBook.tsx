@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import "./UploadBook.style.css";
+import AddCategoryModal from "../Modal/AddCategoryModal";
 
 function UploadBook() {
   const [fileName, setFileName] = useState<Blob | null>(null);
+  const [openModal, setOpenModal] = useState(false);
   const [alert, setAlert] = useState({
     display: false,
     msg: "",
@@ -44,83 +46,99 @@ function UploadBook() {
     },
   });
 
+  const openModalHandler = () => {
+    setOpenModal(true);
+  };
+
+  const closeModalHandler = () => {
+    setOpenModal(false);
+  };
   return (
-    <div className='uploadContainer'>
+    <div className="uploadContainer">
       <h3>Upload a book</h3>
       <form
         onSubmit={formik.handleSubmit}
-        className='formContainer'
-        encType='multipart/form-data'
+        className="formContainer"
+        encType="multipart/form-data"
       >
-        <div className='inputContainer'>
-          <label htmlFor='name'>Book Name</label>
+        <div className="inputContainer">
+          <label htmlFor="name">Book Name</label>
           <input
-            type='text'
+            type="text"
             value={formik.values.name}
             onChange={formik.handleChange}
-            placeholder='Book name'
-            className='formInput'
-            name='name'
+            placeholder="Book name"
+            className="formInput"
+            name="name"
           />
         </div>
-        <div className='inputContainer'>
+        <div className="inputContainer">
           <label>Description</label>
           <input
-            type='text'
-            name='description'
-            placeholder='description'
+            type="text"
+            name="description"
+            placeholder="description"
             value={formik.values.description}
-            className='formInput'
+            className="formInput"
             onChange={formik.handleChange}
           />
         </div>
-        <div className='inputContainer'>
+        <div className="inputContainer">
           <label>Author</label>
           <input
-            type='text'
-            name='authorName'
-            placeholder='author'
+            type="text"
+            name="authorName"
+            placeholder="author"
             value={formik.values.authorName}
-            className='formInput'
+            className="formInput"
             onChange={formik.handleChange}
           />
         </div>
-        <div className='inputContainer'>
-          <label>Category Tags</label>
+        <div className="inputContainer">
+          <div className="inputContainerTags">
+            <label>Category tags</label>
+            <p onClick={openModalHandler}>Add category</p>
+          </div>
           <input
-            type='text'
-            name='categoryName'
-            placeholder='category'
+            type="text"
+            name="categoryName"
+            placeholder="category"
             value={formik.values.categoryName}
-            className='formInput'
+            className="formInput"
             onChange={formik.handleChange}
           />
         </div>
-        <div className='inputContainer'>
+        <div className="inputContainer">
           <label>Book upload</label>
           <input
-            type='file'
-            name='fileName'
-            className='formInput'
+            type="file"
+            name="fileName"
+            className="formInput"
             onChange={(e) => formHandleChange("file", e)}
           />
         </div>
-        <div className='inputContainer'></div>
+        <div className="inputContainer"></div>
         <div></div>
-        <div className='formButtonGroup'>
-          <button className='formSubmit' type='submit' value='Submit'>
+        <div className="formButtonGroup">
+          <button className="formSubmit" type="submit" value="Submit">
             Submit
           </button>
           <button
-            className='formReset'
-            type='reset'
-            value='Reset'
+            className="formReset"
+            type="reset"
+            value="Reset"
             onClick={() => formik.resetForm()}
           >
             Reset
           </button>
         </div>
       </form>
+
+      <AddCategoryModal
+        isOpen={openModal}
+        title="Add Category"
+        closeModal={closeModalHandler}
+      />
 
       {alert.display && <div>{alert.msg}</div>}
     </div>
