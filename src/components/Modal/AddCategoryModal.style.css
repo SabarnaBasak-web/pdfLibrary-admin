@@ -1,52 +1,52 @@
-.overlay{
-    position: fixed;
-    background-color: rgba(0,0,0,0.5);
-    height: 100%;
-    top:0;
-    left: 0;
-    width: 100%;
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-.modal{
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 450px;
-    padding:0.6rem 0.7rem;
-    border: 1px solid #eceff1;
-    border-radius: 5px;
-    background-color: #eceff1;
-}
-
-.modalTitle{
-    font-size: 16px;
-    margin-top:0.3rem;
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #eceff1;
+  border-radius: 5px;
+  background-color: #eceff1;
 }
 
-.formButtonGroup{
-    margin-top: 0.5rem;
-}
-.modalForm{
-    margin-top: 0.5rem;
+.modalTitle {
+  font-size: 16px;
+  margin-top: 0.3rem;
 }
 
-.modalFormButton{
-    border-radius: 0.3rem;
-    background-color: #f9aa33;
-    color: #212121;
-    padding: 0.3rem 0.8rem;
-    box-sizing: border-box;
-    border: 1px solid #f9aa33;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-left: 0.4rem;
+.formButtonGroup {
+  margin-top: 0.5rem;
+}
+.modalForm {
+  margin-top: 0.5rem;
 }
 
-.modalAlertSuccessMsg{
-    font-size: 13px;
-    text-align: center;
-    color:#1B5E20;
+.modalFormButton {
+  border-radius: 0.3rem;
+  background-color: #f9aa33;
+  color: #212121;
+  padding: 0.3rem 0.8rem;
+  box-sizing: border-box;
+  border: 1px solid #f9aa33;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 0.4rem;
+  box-shadow: 0 4px 9px -4px #232f34;
+}
 
+.modalAlertSuccessMsg {
+  font-size: 13px;
+  text-align: center;
+  color: #1b5e20;
 }

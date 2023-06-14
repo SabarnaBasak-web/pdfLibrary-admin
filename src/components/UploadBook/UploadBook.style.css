@@ -59,6 +59,7 @@ h3 {
   cursor: pointer;
   width: 150px;
   margin-top: 0.7rem;
+  box-shadow: 0 4px 9px -4px #232f34;
 }
 .formReset {
   border-radius: 0.3rem;
@@ -83,8 +84,7 @@ h3 {
   align-items: center;
 }
 
-
-.inputContainerTags{
+.inputContainerTags {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -92,8 +92,44 @@ h3 {
   gap: 0.5rem;
 }
 
-.inputContainer p{
+.inputContainer p {
   cursor: pointer;
   font-size: 0.8rem;
   line-height: 1.2;
+}
+
+.selectFormInput {
+  width: 100%;
+  border: 1px solid #f9aa33 !important;
+  border-radius: 0.3rem;
+  font-size: 12px;
+}
+
+.alertContainer {
+  width: fit-content;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+}
+
+.danger {
+  background-color: #d1485f;
+  border: 1px solid #d1485f;
+}
+
+.success {
+  background-color: #14a44d;
+  border: 1px solid #14a44d;
+}
+
+.openModalBtn {
+  color: #fff;
+  font-weight: 700;
+  background-color: #232f34;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 9px -4px #232f34;
 }
