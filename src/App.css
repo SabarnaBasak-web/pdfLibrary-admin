@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -6,30 +6,31 @@
   background-color: #232f34;
   padding: 0.8rem;
 }
-h4{
+h4 {
   font-weight: 700;
   font-size: 18px;
   color: #f9aa33;
 }
-.navigationSection{
-  margin-top:0.5rem;
+.navigationSection {
+  margin-top: 0.5rem;
 }
 
-.navigation-button{
+.navigation-button {
   border-radius: 0.3rem;
   background-color: #f9aa33;
   color: #212121;
   padding: 0.3rem 0.8rem;
   box-sizing: border-box;
   border: 1px solid #f9aa33;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   margin-left: 0.4rem;
+  box-shadow: 0 4px 9px -4px #232f34;
 }
 
-.renderComponent{
+.renderComponent {
   display: flex;
   justify-content: center;
 }
