@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import "./UploadBook.style.css";
-import Select from "react-select";
+import Select, { StylesConfig } from "react-select";
 import AddCategoryModal from "../Modal/AddCategoryModal";
 import { ICategoryResponse } from "../../types/ResponseTypes";
 
@@ -14,6 +14,24 @@ function UploadBook() {
     display: false,
     msg: "",
     status: 0,
+  };
+
+  const styles: StylesConfig = {
+    multiValue: (styles) => {
+      return {
+        ...styles,
+        backgroundColor: "#f9aa33",
+        fontWeight: "700",
+        color: "#212121",
+      };
+    },
+
+    multiValueRemove: (styles, { data }) => ({
+      ...styles,
+      ":hover": {
+        backgroundColor: "#f19100",
+      },
+    }),
   };
   const [fileName, setFileName] = useState<Blob | null>(null);
   const [openModal, setOpenModal] = useState(false);
@@ -166,6 +184,7 @@ function UploadBook() {
             name='categoryNameList'
             options={allCategories}
             className='selectFormInput'
+            styles={styles}
             onChange={selectChangeHandler}
           />
         </div>
@@ -181,9 +200,6 @@ function UploadBook() {
         <div className='inputContainer'></div>
         <div></div>
         <div className='formButtonGroup'>
-          <button className='formSubmit' type='submit' value='Submit'>
-            Submit
-          </button>
           <button
             className='formReset'
             type='reset'
@@ -191,6 +207,9 @@ function UploadBook() {
             onClick={() => formik.resetForm()}
           >
             Reset
+          </button>
+          <button className='formSubmit' type='submit' value='Submit'>
+            Submit
           </button>
         </div>
       </form>
